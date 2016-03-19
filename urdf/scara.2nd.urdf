@@ -11,14 +11,23 @@
 				<color rgba="1.0 1.0 1.0 1.0"/>
 			</material>
 		</visual>
-
+		<collision>
+			<origin xyz="0.0565 0.0 0.119" rpy="0 0 0"/>
+			<geometry>
+				<box size="0.223 0.12 0.238"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="5"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
 	</link>
 	
 	<joint name="base_to_link1" type="revolute">
 		<parent link="base_link"/>
 		<child link="link1"/>
 		<axis xyz="0 0 1"/>
-		<limit effort="1000.0" lower="-2.094395" upper="2.094395" velocity="0.2"/>
+		<limit effort="1000.0" lower="-2.094395" upper="2.094395" velocity="0.02"/>
 		<origin xyz="0 0 0.238"/>
 	</joint>
 	
@@ -28,15 +37,26 @@
 			<geometry>
 				<mesh filename="package://scara_robot/meshes/link1.STL" scale="0.001 0.001 0.001"/>
 			</geometry>
-			<material name="White"/>
+			<material name="White">
+				<color rgba="1.0 1.0 1.0 1.0"/>
+			</material>
 		</visual>
-
+		<collision>
+			<origin xyz="-0.125 0 0.058"/>
+			<geometry>
+				<box size="0.35 0.1 0.05"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="2"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
 	</link>
 	
 	<joint name="link1_to_link2" type="revolute">
 		<parent link="link1"/>
 		<child link="link2"/>
-		<limit effort="1000.0" lower="-2.268928" upper="2.268928" velocity="0.2"/>
+		<limit effort="1000.0" lower="-2.268928" upper="2.268928" velocity="0.02"/>
 		<axis xyz="0 0 1"/>
 		<origin xyz="-0.25 0 0.088"/>
 	</joint>
@@ -49,12 +69,22 @@
 			</geometry>
 			<material name="White"/>
 		</visual>
+		<collision>
+			<origin xyz="-0.085 0 0.15"/>
+			<geometry>
+				<box size="0.25 0.15 0.3"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="3"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
 	</link>
 	
 	<joint name="link2_to_link3" type="prismatic">
 		<parent link="link2"/>
 		<child link="link3"/>
-		<limit effort="1000.0" lower="-0.15" upper="0.0" velocity="0.002"/>
+		<limit effort="1000.0" lower="-0.15" upper="0.0" velocity="0.0002"/>
 		<axis xyz="0 0 1"/>
 		<origin xyz="-0.15 0 0.0"/>
 	</joint>
@@ -65,9 +95,20 @@
 			<geometry>
 				<mesh filename="package://scara_robot/meshes/link3.STL" scale="0.001 0.001 0.001"/>
 			</geometry>
-			<material name="White"/>
+			<material name="White">
+				<color rgba="1.0 1.0 1.0 1.0"/>
+			</material>
 		</visual>
-
+		<collision>
+		<origin xyz="0 0 0.061772"/>
+			<geometry>
+				<box size="0.04 0.025 0.219"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.1"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
 	</link>
 	
 	<joint name="link3_to_link4" type="continuous">
@@ -85,6 +126,15 @@
 			</geometry>
 			<material name="White"/>
 		</visual>
-
+		<collision>
+			<origin xyz="0 0 -0.068228"/>
+			<geometry>
+				<box size="0.06 0.04 0.136456"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.2"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+		</inertial>
 	</link>
 </robot>
