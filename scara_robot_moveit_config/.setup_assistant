@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: scara_robot
+    relative_path: urdf/scara.2nd.urdf
+  SRDF:
+    relative_path: config/scara.srdf
+  CONFIG:
+    generated_timestamp: 1458810226
