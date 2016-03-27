@@ -1,0 +1,18 @@
+port: /dev/ttyUSB0
+baud: 1000000
+rate: 100
+sync_write: True
+sync_read: False
+read_rate: 20
+write_rate: 20
+
+joints: {
+   base_to_link1: {id: 1, neutral: 1048760, min_angle: -118, max_angle: 118},
+   link1_to_link2: {id: 2, neutral: 1048760, min_angle: -128, max_angle: 128},
+   link2_to_link3: {id: 3, neutral: 1345728},
+   link3_to_link4: {id: 4, neutral: 3145728}
+}
+
+controllers: {
+   arm_controller: {onboard: False, action_name: arm_controller/follow_joint_trajectory, type: follow_controller, joints: [base_to_link1, link1_to_link2, link2_to_link3, link3_to_link4]}
+}

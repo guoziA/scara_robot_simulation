@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   urdf
   sensor_msgs
   std_msgs
+  moveit_ros_planning_interface
 )
 
 ## System dependencies are found with CMake's conventions
@@ -107,16 +108,14 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-# add_executable(scara_robot_node src/scara_robot_node.cpp)
+ add_executable(nav_test src/nav_test.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(scara_robot_node scara_robot_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(scara_robot_node
-#   ${catkin_LIBRARIES}
-# )
+ target_link_libraries(nav_test ${catkin_LIBRARIES})
 
 #############
 ## Install ##
